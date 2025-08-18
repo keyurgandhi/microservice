@@ -20,3 +20,7 @@ Run docker with custom network in place to enable service to service communicati
 
 
 `docker run -d -p 8083:8080 --name=ms-1 --network=microservice-network --env MS-2-HOST=http://ms-2:8080 ms-1:1.0`
+
+Run docker compose up from root directory to avoid manual run of all the containers.
+
+`docker compose-up`
