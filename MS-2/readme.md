@@ -22,4 +22,4 @@ Run docker with custom network in place to enable service to service communicati
 
 Run docker compose up from root directory to avoid manual run of all the containers.
 
-`docker compose-up`
+`docker compose-up -d`
