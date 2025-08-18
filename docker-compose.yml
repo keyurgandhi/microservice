@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  ms-1:
+    image: ms-1:1.0
+    ports:
+      - 8083:8080
+    networks:
+      - microservice-network
+    restart: always
+    depends_on:
+      - ms-2
+    environment:
+      MS-2-HOST: http://ms-2:8080
+
+  ms-2:
+    image: ms-2:1.0
+    ports:
+      - 8082:8080
+    networks:
+      - microservice-network
+    restart: always
+
+# Networks to be created to provide communication between containers
+networks:
+  microservice-network:
+
+
+
