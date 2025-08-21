@@ -14,13 +14,17 @@ Build application
 
 Build docker image
 
-`docker build --no-cache -t ms-1:1.0 .`
+`docker build --no-cache -t ultimatelearning/ms-1:1.0 .`
 
 Run docker with custom network in place to enable service to service communication
 
 
-`docker run -d -p 8083:8080 --name=ms-1 --network=microservice-network --env MS-2-HOST=http://ms-2:8080 ms-1:1.0`
+`docker run -d -p 8083:8080 --name=ms-1 --network=microservice-network --env MS-2-HOST=http://ms-2:8080 ultimatelearning/ms-1:1.0`
 
 Run docker compose up from root directory to avoid manual run of all the containers.
 
-`docker compose-up`
+`docker compose-up -d`
+
+Crete docker network if does not exist on local docker.
+
+`docker network create microservice-network`
