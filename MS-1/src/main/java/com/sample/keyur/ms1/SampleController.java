@@ -1,6 +1,8 @@
 package com.sample.keyur.ms1;
 
+import com.sample.keyur.ms1.com.sample.keyur.ms1.InstanceInformationService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,12 +14,16 @@ import org.springframework.web.client.RestClient;
 @RestController
 public class SampleController {
 
+
+    @Autowired
+    private InstanceInformationService service;
+
     @Value("${ms2.api}")
     private String ms2API;
 
     @GetMapping(value = "/")
     public String hello(){
-        return "Keyur";
+        return "Hello Currency Converter "+service.retrieveInstanceInfo();
     }
 
     @GetMapping(value = "/dollar/to/inr/{dollarcount}")
