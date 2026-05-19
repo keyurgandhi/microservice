@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   ms-1:
-    image: ultimatelearning/ms-1:1.0
+    image: ultimatelearning/ms-1:2.0
     ports:
       - 8083:8080
     networks:
@@ -13,7 +13,7 @@ services:
       MS-2-HOST: http://ms-2:8080
 
   ms-2:
-    image: ultimatelearning/ms-2:1.0
+    image: ultimatelearning/ms-2:2.0
     ports:
       - 8082:8080
     networks:
